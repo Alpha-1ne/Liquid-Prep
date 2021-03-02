@@ -10,14 +10,14 @@ export class ConnectingDialogComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<ConnectingDialogComponent>) {
 
-    dialogRef.disableClose = true;
+    this.dialogRef.disableClose = true;
 
-    dialogRef.afterClosed().subscribe(result => {
+    this.dialogRef.afterClosed().subscribe(result => {
     });
 
-    dialogRef.afterOpened().subscribe(_ => {
+    this.dialogRef.afterOpened().subscribe(_ => {
       setTimeout(() => {
-        dialogRef.close();
+        this.dialogRef.close();
       }, 10000);
     });
   }
